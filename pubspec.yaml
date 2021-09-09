@@ -1,0 +1,91 @@
+name: dalbergia_id
+description: Dalbergia Id App.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  intl: any
+  fluttertoast: ^8.0.8
+  shared_preferences: ^2.0.7
+  font_awesome_flutter: ^9.1.0
+  flutter_svg: ^0.22.0
+  get: ^4.3.8
+  dio: ^4.0.0
+  audioplayers: ^0.20.0
+  equatable: ^2.0.3
+  cached_network_image: ^3.1.0
+  flutter_spinkit: ^5.1.0
+  lottie: ^1.1.0
+  device_preview: ^0.7.4
+  sizer: ^2.0.13
+  flutter_dotenv: ^5.0.2
+  carousel_slider: ^4.0.0
+  url_launcher: ^6.0.10
+  animations: ^2.0.1
+  curved_navigation_bar: ^1.0.1
+  expandable: ^5.0.1
+  photo_view: ^0.12.0
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner: ^2.1.2
+  flutter_launcher_icons: ^0.9.2
+
+
+flutter_icons:
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/images/logo.png"
+  adaptive_icon_background: "#000000"
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/images/
+    - assets/audios/
+    - assets/lottie/
+    - assets/images/home/
+    - assets/images/Anh-phan-Tra-cuu/
+    - assets/images/Anh-phan-Tra-cuu/1. Than/
+    - assets/images/Anh-phan-Tra-cuu/2. Hinh thai la/
+    - assets/images/Anh-phan-Tra-cuu/3. Hoa/
+    - assets/images/Anh-phan-Tra-cuu/4. Quả/
+    - assets/images/Anh-phan-Tra-cuu/5. Cây tái sinh/
+    - assets/images/Anh-phan-Tra-cuu/6. Gỗ/
+    - assets/images/Cam-lai/
+    - assets/images/Logos-for-trees/
+    - assets/images/Trac/
+    - .env
+
+
+  fonts:
+    - family: Quicksand
+      fonts:
+        - asset: assets/fonts/Quicksand-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Quicksand-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Quicksand-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Quicksand-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Quicksand-Bold.ttf
+          weight: 700
