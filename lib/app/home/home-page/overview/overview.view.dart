@@ -3,6 +3,8 @@ import 'package:dalbergia_id/app/home/home-page/overview/page/distribution.dart'
 import 'package:dalbergia_id/app/home/home-page/overview/page/features.dart';
 import 'package:dalbergia_id/app/home/home-page/overview/page/overview.dart';
 import 'package:dalbergia_id/app/home/home-page/overview/page/value.dart';
+import 'package:dalbergia_id/app/home/home-page/overview/page/wood.dart';
+import 'package:dalbergia_id/app/home/home-page/overview/page/morphological.dart';
 import 'package:dalbergia_id/themes/style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Value;
@@ -40,6 +42,8 @@ class OverviewScreen extends GetView {
                   Distribution(isFirstSpecies: isFirstSpecies),
                   Feature(isFirstSpecies: isFirstSpecies),
                   Value(isFirstSpecies: isFirstSpecies),
+                  Morphological(isFirstSpecies: isFirstSpecies),
+                  Wood(isFirstSpecies: isFirstSpecies),
                 ],
               ),
             )

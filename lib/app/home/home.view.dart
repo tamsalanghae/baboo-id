@@ -1,5 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:dalbergia_id/app/home/home-page/home-page.view.dart';
+import 'package:dalbergia_id/app/home/introduction/introduction.view.dart';
+import 'package:dalbergia_id/app/home/search/search-page.controller.dart';
+import 'package:dalbergia_id/app/home/search/search-page.view.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -12,11 +15,11 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<Map<String, dynamic>> _mainModules = [
-    {'icon': Icons.add, 'label': 'Trang chủ', 'widget': HomePageView()},
-    {'icon': Icons.list, 'label': 'Tra cứu', 'widget': Container()},
-    {'icon': Icons.ac_unit_outlined, 'label': 'Thuật ngữ', 'widget': Container()},
-    {'icon': Icons.access_alarm, 'label': 'Hướng dẫn', 'widget': Container()},
-    {'icon': Icons.compare_arrows, 'label': 'Giới thiệu', 'widget': Container()},
+    {'icon': "home", 'label': 'Trang chủ', 'widget': HomePageView()},
+    {'icon': "search", 'label': 'Tra cứu', 'widget': Container()},
+    {'icon': "book", 'label': 'Thuật ngữ', 'widget': Container()},
+    {'icon': "intruct", 'label': 'Hướng dẫn', 'widget': Container()},
+    {'icon': "intro", 'label': 'Giới thiệu', 'widget': Container()},
   ];
   int _bottomNavIndex = 0;
 
@@ -36,10 +39,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   .asMap()
                   .entries
                   .map(
-                    (e) => Icon(
-                      e.value["icon"] as IconData,
-                      size: 30,
-                      color: _bottomNavIndex == e.key ? Color(0xFF0D711C) : Color(0xFF707070),
+                    (e) => Image.asset(
+                      "assets/images/home/${e.value["icon"]}${_bottomNavIndex == e.key ? "-active" : "-inactive"}.png",
                     ),
                   )
                   .toList(),
@@ -55,6 +56,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       alignment: Alignment.lerp(Alignment.bottomCenter, Alignment.center, 0.3)!,
                       child: Text(
                         "${e.value["label"]}",
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                         style: Theme.of(context).textTheme.bodyText1!.copyWith(
                               fontSize: _bottomNavIndex == e.key ? 15 : 14,
                               color: _bottomNavIndex == e.key ? Color(0xFF0D711C) : Color(0xFF707070),

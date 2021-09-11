@@ -34,7 +34,7 @@ class HomePageView extends GetView<HomeController> {
                       Image.asset("assets/images/Trac/1. Trac.JPG", height: 70.w, width: 80.w, fit: BoxFit.cover),
                       CommonButton(
                         width: 35.w,
-                        height: 5.w,
+                        height: 30,
                         backgroundColor: AppColor.white,
                         child: Text(
                           "Loài trắc",
@@ -56,7 +56,7 @@ class HomePageView extends GetView<HomeController> {
                       Image.asset("assets/images/Cam-lai/2. Cam lai.JPG", height: 70.w, width: 80.w, fit: BoxFit.cover),
                       CommonButton(
                         width: 35.w,
-                        height: 5.w,
+                        height:  30,
                         backgroundColor: AppColor.white,
                         child: Text(
                           "Loài Cẩm lai",
