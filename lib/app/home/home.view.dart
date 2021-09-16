@@ -16,10 +16,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   List<Map<String, dynamic>> _mainModules = [
     {'icon': "home", 'label': 'Trang chủ', 'widget': HomePageView()},
-    {'icon': "search", 'label': 'Tra cứu', 'widget': Container()},
+    {'icon': "search", 'label': 'Tra cứu', 'widget': SearchPageView()},
     {'icon': "book", 'label': 'Thuật ngữ', 'widget': Container()},
     {'icon': "intruct", 'label': 'Hướng dẫn', 'widget': Container()},
-    {'icon': "intro", 'label': 'Giới thiệu', 'widget': Container()},
+    {'icon': "intro", 'label': 'Giới thiệu', 'widget': IntroductionPageView()},
   ];
   int _bottomNavIndex = 0;
 
@@ -27,6 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _mainModules.elementAt(_bottomNavIndex)["widget"] as Widget,
+      extendBody: true,
       bottomNavigationBar: SizedBox(
         height: 75.0,
         child: Stack(
@@ -56,6 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       alignment: Alignment.lerp(Alignment.bottomCenter, Alignment.center, 0.3)!,
                       child: Text(
                         "${e.value["label"]}",
+                        textAlign: TextAlign.center,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: Theme.of(context).textTheme.bodyText1!.copyWith(

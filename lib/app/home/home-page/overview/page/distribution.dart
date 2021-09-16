@@ -1,5 +1,6 @@
 import 'dart:ui';
-
+import 'package:animations/animations.dart';
+import 'package:dalbergia_id/app/components/photo-picker/view-photo.component.dart';
 import 'package:dalbergia_id/themes/style.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/cupertino.dart';
@@ -108,8 +109,20 @@ class Distribution extends StatelessWidget {
             ),
           ),
           SizedBox(height: 2.h),
-          Image.asset(
-            isFirstSpecies ? "assets/images/Trac/Hinh 3.1.png" : "assets/images/Cam-lai/Hinh 4.1.jpg",
+          OpenContainer(
+            transitionType: ContainerTransitionType.fade,
+            openBuilder: (BuildContext context, VoidCallback _) => ViewPhoto(
+              isFirstSpecies ? "assets/images/Trac/Hinh 3.1.png" : "assets/images/Cam-lai/Hinh 4.1.jpg",
+            ),
+            closedElevation: 0.0,
+            closedShape: const RoundedRectangleBorder(),
+            closedColor: Colors.transparent,
+            closedBuilder: (BuildContext context, VoidCallback openContainer) => AnimatedSwitcher(
+              duration: Duration(milliseconds: 400),
+              child: Image.asset(
+                isFirstSpecies ? "assets/images/Trac/Hinh 3.1.png" : "assets/images/Cam-lai/Hinh 4.1.jpg",
+              ),
+            ),
           ),
           SizedBox(height: 4.h),
         ],
